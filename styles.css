@@ -1,0 +1,9 @@
+.title {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+}
