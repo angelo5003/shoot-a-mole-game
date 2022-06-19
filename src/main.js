@@ -1,11 +1,11 @@
 const game = new Game();
 
 function setup() {
-  createCanvas(WIDTH, HEIGHT);
+  createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 
 function draw() {
-  game.drawGrid();
+  game.play();
 }
 
 function preload() {}
