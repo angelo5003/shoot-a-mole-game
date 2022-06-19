@@ -3,8 +3,12 @@ class Game {
     this.player = new Player();
   }
 
+  preload() {
+    this.player.preload();
+  }
+
   play() {
-    background("orange");
+    // background("orange");
     this.player.drawPlayer();
   }
 }
