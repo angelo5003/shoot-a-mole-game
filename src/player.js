@@ -1,13 +1,12 @@
 class Player {
-  constructor(img, bullet) {
-    // this.column = 340; // y-axis
-    this.column = 340; // y-axis
-    this.row = 0; // x-axis
+  constructor(img) {
+    this.column = 340; // x-axis
+    this.row = 500; // y-axis
     this.top = 420;
     this.width = PLAYER_WIDTH;
     this.height = PLAYER_HEIGHT;
     this.img = img;
-    this.bullet = bullet;
+    // this.bullet = bullet;
     this.bulletArray = [];
   }
 
@@ -24,6 +23,12 @@ class Player {
     // image(this.img, this.left, this.top, this.width, this.height);
     pop();
     this.playerMove();
+
+    this.bulletArray.forEach((bullet) => {
+      bullet.loadBullet();
+    });
+
+    this.removeBullets();
   }
 
   //3.player need to move sideways with keyIsDown
@@ -43,7 +48,14 @@ class Player {
 
   //4. shoot the bullet
   shootBullet() {
-    this.bulletArray.push(new Bullets());
+    this.bulletArray.push(new Bullets(this.column, this.row));
+  }
+
+  //5. remove fired bullets
+  removeBullets() {
+    this.bulletArray = this.bulletArray.filter(
+      (bullet) => bullet.row && bullet.column <= CANVAS_WIDTH
+    );
   }
 
   //5. player need to shoot bullets to the digletss.

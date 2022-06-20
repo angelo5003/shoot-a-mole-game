@@ -1,6 +1,10 @@
 class Bullets {
-  constructor(top, left) {
-    this.top = top;
-    this.left = left;
+  constructor(column, row) {
+    this.column = column;
+    this.row = row;
+  }
+  loadBullet() {
+    rect(this.column, this.row, 40, 40);
+    this.row -= 2;
   }
 }
