@@ -8,7 +8,10 @@ class Game {
   }
 
   play() {
-    // background("orange");
     this.player.drawPlayer();
+  }
+
+  keyPressed() {
+    this.player.keyPressed();
   }
 }

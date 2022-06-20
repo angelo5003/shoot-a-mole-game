@@ -1,5 +1,5 @@
 class Player {
-  constructor(img) {
+  constructor(img, bullet) {
     // this.column = 340; // y-axis
     this.column = 340; // y-axis
     this.row = 0; // x-axis
@@ -7,6 +7,8 @@ class Player {
     this.width = PLAYER_WIDTH;
     this.height = PLAYER_HEIGHT;
     this.img = img;
+    this.bullet = bullet;
+    this.bulletArray = [];
   }
 
   //1. image of player
@@ -38,5 +40,17 @@ class Player {
       }
     }
   }
-  //4. player need to shoot bullets to the digletss
+
+  //4. shoot the bullet
+  shootBullet() {
+    this.bulletArray.push(new Bullets());
+  }
+
+  //5. player need to shoot bullets to the digletss.
+  keyPressed() {
+    if (keyCode === SPACE_BAR) {
+      console.log("Im shooting");
+      this.shootBullet();
+    }
+  }
 }
