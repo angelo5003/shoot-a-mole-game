@@ -1,6 +1,7 @@
 class Game {
   constructor() {
     this.player = new Player();
+    this.mole = new Mole();
   }
 
   preload() {
@@ -9,6 +10,7 @@ class Game {
 
   play() {
     this.player.drawPlayer();
+    this.mole.drawMole();
   }
 
   keyPressed() {

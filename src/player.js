@@ -6,7 +6,6 @@ class Player {
     this.width = PLAYER_WIDTH;
     this.height = PLAYER_HEIGHT;
     this.img = img;
-    // this.bullet = bullet;
     this.bulletArray = [];
   }
 
@@ -46,15 +45,17 @@ class Player {
     }
   }
 
-  //4. shoot the bullet
+  //4. shoot/add bullet to the bullet array
   shootBullet() {
-    this.bulletArray.push(new Bullets(this.column, this.row));
+    this.bulletArray.push(new Bullets(this.column + 18, this.row - 85));
+    // this.bulletArray.push(new Bullets(this.column, this.row));
   }
 
   //5. remove fired bullets
   removeBullets() {
     this.bulletArray = this.bulletArray.filter(
       (bullet) => bullet.row && bullet.column <= CANVAS_WIDTH
+      // (bullet) => bullet.row && bullet.column <= CANVAS_WIDTH
     );
   }
 

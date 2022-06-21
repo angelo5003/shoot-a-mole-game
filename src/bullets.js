@@ -4,7 +4,7 @@ class Bullets {
     this.row = row;
   }
   loadBullet() {
-    rect(this.column, this.row, 40, 40);
-    this.row -= 2;
-  }
+    rect(this.column, this.row, 12, 12);
+    this.row -= 5;
+  } // as soon as I change the value of -= 5 to 2,4,1 the array will not be cleared. But if I change the value to -=5 or 2.5 the array will be cleared.
 }
