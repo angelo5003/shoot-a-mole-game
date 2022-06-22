@@ -1,11 +1,21 @@
 class Mole {
-  constructor() {}
+  constructor() {
+    this.width = 300;
+    this.height = 100;
+  }
+
   //1. draw the hole and the moles
   drawMole() {
-    this.createHole();
+    this.drawHoles();
   }
   // 2.create a hole where the digletts are hiding
-  createHole() {
-    circle(50, 30, 50);
+  drawHoles() {
+    translate(this.width / 1.5, this.height / 4); // with the width value of 300
+
+    for (let x = 0; x <= this.width; x = x += 100) {
+      circle(x, 50, 50, 50);
+      circle(x, 150, 50, 50);
+      circle(x, 250, 50, 50);
+    }
   }
 }

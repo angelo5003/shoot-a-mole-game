@@ -1,7 +1,8 @@
 const game = new Game(PLAYER_WIDTH, PLAYER_HEIGHT);
 
 function setup() {
-  createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+  const canvas = createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
+  canvas.parent("canvas");
 }
 
 function draw() {

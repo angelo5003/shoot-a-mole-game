@@ -7,3 +7,8 @@
   display: flex;
   justify-content: center;
 }
+
+#canvas {
+  display: flex;
+  justify-content: center;
+}
