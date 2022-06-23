@@ -6,6 +6,7 @@ class Game {
 
   preload() {
     this.player.preload();
+    this.mole.preload();
   }
 
   play() {

@@ -1,7 +1,7 @@
 class Player {
   constructor(img) {
-    this.column = 340; // x-axis
-    this.row = 500; // y-axis
+    this.moveHorizontal = 340; // horizontal-movement of player, also called(x-axis of the canvas)
+    this.moveVertical = 500; // vertical-movement of player, also called (y-axis of the canvas)
     this.top = 420;
     this.width = PLAYER_WIDTH;
     this.height = PLAYER_HEIGHT;
@@ -18,7 +18,7 @@ class Player {
   drawPlayer() {
     push();
     fill("red");
-    rect(this.column, this.top, this.width, this.height);
+    rect(this.moveHorizontal, this.top, this.width, this.height);
     // image(this.img, this.left, this.top, this.width, this.height);
     pop();
     this.playerMove();
@@ -33,21 +33,23 @@ class Player {
   //3.player need to move sideways with keyIsDown
   playerMove() {
     if (keyIsDown(ARROW_RIGHT)) {
-      this.column += 5;
-      if (this.column >= 700) {
-        this.column = 700;
+      this.moveHorizontal += 5;
+      if (this.moveHorizontal >= 700) {
+        this.moveHorizontal = 700;
       }
     } else if (keyIsDown(ARROW_LEFT)) {
-      this.column -= 5;
-      if (this.column < 0) {
-        this.column = 0;
+      this.moveHorizontal -= 5;
+      if (this.moveHorizontal < 0) {
+        this.moveHorizontal = 0;
       }
     }
   }
 
   //4. shoot/add bullet to the bullet array
   shootBullet() {
-    this.bulletArray.push(new Bullets(this.column + 18, this.row - 85));
+    this.bulletArray.push(
+      new Bullets(this.moveHorizontal + 18, this.moveVertical - 85)
+    );
     // this.bulletArray.push(new Bullets(this.column, this.row));
   }
 
