@@ -45,27 +45,25 @@ class Player {
     }
   }
 
-  //4. shoot/add bullet to the bullet array
-  shootBullet() {
-    this.bulletArray.push(
-      new Bullets(this.moveHorizontal + 18, this.moveVertical - 85)
-    );
-    // this.bulletArray.push(new Bullets(this.column, this.row));
-  }
-
-  //5. remove fired bullets
-  removeBullets() {
-    this.bulletArray = this.bulletArray.filter(
-      (bullet) => bullet.row && bullet.column <= CANVAS_WIDTH
-      // (bullet) => bullet.row && bullet.column <= CANVAS_WIDTH
-    );
-  }
-
-  //5. player need to shoot bullets to the digletss.
+  //4. player need to shoot bullets to the digletss.
   keyPressed() {
     if (keyCode === SPACE_BAR) {
       console.log("Im shooting");
       this.shootBullet();
     }
+  }
+
+  //5. shoot/add bullet to the bullet array
+  shootBullet() {
+    this.bulletArray.push(
+      new Bullets(this.moveHorizontal + 18, this.moveVertical - 85)
+    );
+  }
+
+  //6. remove fired bullets
+  removeBullets() {
+    this.bulletArray = this.bulletArray.filter(
+      (bullet) => bullet.row && bullet.column <= CANVAS_WIDTH
+    );
   }
 }

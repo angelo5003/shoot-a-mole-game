@@ -1,4 +1,8 @@
-const game = new Game(PLAYER_WIDTH, PLAYER_HEIGHT);
+const game = new Game();
+
+function preload() {
+  game.preload();
+}
 
 function setup() {
   const canvas = createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -8,10 +12,6 @@ function setup() {
 function draw() {
   background("orange");
   game.play();
-}
-
-function preload() {
-  game.preload();
 }
 
 function keyPressed() {
