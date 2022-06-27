@@ -2,7 +2,7 @@ class Player {
   constructor() {
     this.moveHorizontal = 340; // horizontal-movement of player, also called(x-axis of the canvas)
     this.moveVertical = 500; // vertical-movement of player, also called (y-axis of the canvas)
-    this.top = 460;
+    this.top = 400;
     this.width = PLAYER_WIDTH;
     this.height = PLAYER_HEIGHT;
     this.img = this.img;
@@ -12,6 +12,7 @@ class Player {
   //1. image of player
   preload() {
     this.img = loadImage("assets/angry_gnome_transparent.png");
+    this.bulletImg = loadImage("assets/bullet.png");
   }
 
   //2.draw player
@@ -23,10 +24,11 @@ class Player {
     pop();
     this.playerMove();
 
+    //2.1 create the bullet in the drawPlayer
     this.bulletArray.forEach((bullet) => {
       bullet.drawLoadBullet();
     });
-
+    //2.2 remove the bullets from the array as soon as they leave the canvas
     this.removeBullets();
   }
 
@@ -56,7 +58,11 @@ class Player {
   //5. shoot/add bullet to the bullet array
   shootBullet() {
     this.bulletArray.push(
-      new Bullets(this.moveHorizontal + 18, this.moveVertical - 85)
+      new Bullets(
+        this.moveHorizontal + 18,
+        this.moveVertical - 85,
+        this.bulletImg
+      )
     );
   }
 

@@ -7,7 +7,7 @@ class Mole {
     this.moleHeight = 50;
     this.birthOfMole = frameCount;
     this.moleLife = random(60 * 1, 60 * 1);
-    // this.moleCoordinates = [];
+    this.moleCoordinates = [];
   }
 
   //1. pre-load image of mole

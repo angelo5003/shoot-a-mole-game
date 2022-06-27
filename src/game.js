@@ -49,19 +49,17 @@ class Game {
     this.score = 0;
   }
 
+  //1. preload images etc
   preload() {
     this.gameBackground.preload();
     this.backgroundHole.preload();
     this.player.preload();
-    this.bullet.preload();
   }
-
+  //2. everything that is related to play the game
   play() {
     this.gameBackground.drawBackground();
     this.backgroundHole.drawHole();
     this.player.drawPlayer();
-
-    // rect(192, 20, 50, 50);
 
     if (frameCount % 75 === 0) {
       this.mole.push(
