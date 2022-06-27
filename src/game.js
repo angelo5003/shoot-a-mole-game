@@ -3,7 +3,8 @@ class Game {
     this.player = new Player();
     this.mole = [];
     this.bullet = new Bullets();
-    this.background = new BackgroundHole();
+    this.backgroundHole = new BackgroundHole();
+    this.gameBackground = new Background();
     this.holeCoordinates = [
       // Left column circle coords
       {
@@ -45,17 +46,22 @@ class Game {
         y: 225,
       },
     ];
+    this.score = 0;
   }
 
   preload() {
-    this.background.preload();
+    this.gameBackground.preload();
+    this.backgroundHole.preload();
     this.player.preload();
     this.bullet.preload();
   }
 
   play() {
-    this.background.drawHole();
+    this.gameBackground.drawBackground();
+    this.backgroundHole.drawHole();
     this.player.drawPlayer();
+
+    // rect(192, 20, 50, 50);
 
     if (frameCount % 75 === 0) {
       this.mole.push(

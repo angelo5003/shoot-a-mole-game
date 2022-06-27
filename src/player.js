@@ -1,11 +1,11 @@
 class Player {
-  constructor(img) {
+  constructor() {
     this.moveHorizontal = 340; // horizontal-movement of player, also called(x-axis of the canvas)
     this.moveVertical = 500; // vertical-movement of player, also called (y-axis of the canvas)
-    this.top = 420;
+    this.top = 460;
     this.width = PLAYER_WIDTH;
     this.height = PLAYER_HEIGHT;
-    this.img = img;
+    this.img = this.img;
     this.bulletArray = [];
   }
 
@@ -18,13 +18,13 @@ class Player {
   drawPlayer() {
     push();
     fill("red");
-    rect(this.moveHorizontal, this.top, this.width, this.height);
-    // image(this.img, this.left, this.top, this.width, this.height);
+    // rect(this.moveHorizontal, this.top, this.width, this.height);
+    image(this.img, this.moveHorizontal, this.top, this.width, this.height);
     pop();
     this.playerMove();
 
     this.bulletArray.forEach((bullet) => {
-      bullet.loadBullet();
+      bullet.drawLoadBullet();
     });
 
     this.removeBullets();
