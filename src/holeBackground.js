@@ -1,6 +1,6 @@
 class BackgroundHole {
   constructor() {
-    this.top = 150;
+    this.top = 170;
     this.left = 375;
     this.width = 400;
     this.height = 300;

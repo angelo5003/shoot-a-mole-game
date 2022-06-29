@@ -1,54 +1,53 @@
 class Game {
   constructor() {
     this.player = new Player();
-    this.mole = [];
+    this.moleArray = [];
     this.bullet = new Bullets();
     this.backgroundHole = new BackgroundHole();
     this.gameBackground = new Background();
     this.holeCoordinates = [
       // Left column circle coords
       {
-        x: 192,
-        y: 20,
+        x: 218,
+        y: 45,
       },
       {
-        x: 192,
-        y: 125,
+        x: 218,
+        y: 145,
       },
       {
-        x: 192,
-        y: 225,
+        x: 218,
+        y: 245,
       },
       // Middle column circle coords
       {
-        x: 330,
-        y: 20,
+        x: 360,
+        y: 45,
       },
       {
-        x: 330,
-        y: 125,
+        x: 360,
+        y: 145,
       },
       {
-        x: 330,
-        y: 225,
+        x: 360,
+        y: 245,
       },
       // Right column circle coords
       {
-        x: 480,
-        y: 20,
+        x: 505,
+        y: 45,
       },
       {
-        x: 480,
-        y: 125,
+        x: 505,
+        y: 145,
       },
       {
-        x: 480,
-        y: 225,
+        x: 505,
+        y: 245,
       },
     ];
     this.score = 0;
     this.bulletArray = [];
-    console.log(this.bulletArray);
   }
 
   //1. preload images etc
@@ -56,6 +55,7 @@ class Game {
     this.gameBackground.preload();
     this.backgroundHole.preload();
     this.bulletImg = loadImage("assets/bullet.png");
+    this.moleImg = loadImage("assets/diglett_without_background.png");
     this.player.preload();
   }
   //2. everything that is related to play the game
@@ -66,15 +66,16 @@ class Game {
 
     // 3. random method to show and hide the mole on the holes
     if (frameCount % 75 === 0) {
-      this.mole.push(
+      this.moleArray.push(
         new Mole(
           this.holeCoordinates[
             Math.floor(random(0, this.holeCoordinates.length - 1)) // 0 is the starting index o the array, the minus 1 is to keep repeating the random function
-          ]
+          ],
+          this.moleImg
         )
       );
     }
-    this.mole = this.mole.filter((newMole) => {
+    this.moleArray = this.moleArray.filter((newMole) => {
       newMole.drawMole();
       return !newMole.shouldDisappear;
     });

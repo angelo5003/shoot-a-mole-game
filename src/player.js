@@ -2,7 +2,7 @@ class Player {
   constructor() {
     this.moveHorizontal = 340; // horizontal-movement of player, also called(x-axis of the canvas)
     this.moveVertical = 500; // vertical-movement of player, also called (y-axis of the canvas)
-    this.top = 400;
+    this.top = 450;
     this.width = PLAYER_WIDTH;
     this.height = PLAYER_HEIGHT;
     this.img = this.img;
