@@ -12,3 +12,19 @@
   display: flex;
   justify-content: center;
 }
+
+.instructions {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fa-solid,
+.fa-arrow-right {
+  font-size: 24px;
+}
+
+.fa-solid,
+.fa-arrow-left {
+  font-size: 24px;
+}

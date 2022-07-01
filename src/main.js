@@ -10,8 +10,6 @@ function setup() {
 }
 
 function draw() {
-  // background("orange");
-
   game.play();
 }
 

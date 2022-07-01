@@ -1,14 +1,13 @@
 class Mole {
   constructor(randomCoordinate, moleImg) {
-    this.moleWidth = 90;
-    this.moleHeight = 90;
+    this.moleWidth = MOLE_WIDTH;
+    this.moleHeight = MOLE_HEIGHT;
     this.moleImg = moleImg;
 
     this.x = randomCoordinate.x;
     this.y = randomCoordinate.y;
     this.birthOfMole = frameCount;
     this.moleLife = random(60 * 1, 60 * 1);
-    this.moleCoordinates = [];
   }
 
   //1. draw the mole

@@ -5,18 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/4ca5def066.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
     <title>Shoot A Mole Game</title>
   </head>
   <body>
     <section class="title">
-      <span id="score-span">Score:</span>
+      <span id="score-span"></span>
       <h1>Shoot a Mole</h1>
       <span id="time-span">Time:</span>
     </section>
 
     <div id="canvas"></div>
+    <section class="instructions">
+      <h3>Instructions:</h3>
+      <p>Shooting = Spacebar</p>
+      <p>Move to right: hold <i class="fa-solid fa-arrow-right"></i> key</p>
+      <p>Move to left: hold <i class="fa-solid fa-arrow-left"></i>key</p>
+    </section>
 
+    <!--Game scripts-->
     <script src="src/constants.js"></script>
     <script src="src/background.js"></script>
     <script src="src/holeBackground.js"></script>

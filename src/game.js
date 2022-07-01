@@ -1,10 +1,11 @@
 class Game {
   constructor() {
     this.player = new Player();
-    this.moleArray = [];
     this.bullet = new Bullets();
+
     this.backgroundHole = new BackgroundHole();
     this.gameBackground = new Background();
+
     this.holeCoordinates = [
       // Left column circle coords
       {
@@ -46,8 +47,9 @@ class Game {
         y: 245,
       },
     ];
-    this.score = 0;
+    this.moleArray = [];
     this.bulletArray = [];
+    this.score = 0;
   }
 
   //1. preload images etc
@@ -62,6 +64,7 @@ class Game {
   play() {
     this.gameBackground.drawBackground();
     this.backgroundHole.drawHole();
+
     this.player.drawPlayer();
 
     // 3. random method to show and hide the mole on the holes
@@ -69,7 +72,7 @@ class Game {
       this.moleArray.push(
         new Mole(
           this.holeCoordinates[
-            Math.floor(random(0, this.holeCoordinates.length - 1)) // 0 is the starting index o the array, the minus 1 is to keep repeating the random function
+            Math.floor(random(0, this.holeCoordinates.length - 1)) // 0 is the starting index of the array, the minus 1 is to keep repeating the random function
           ],
           this.moleImg
         )
@@ -80,12 +83,28 @@ class Game {
       return !newMole.shouldDisappear;
     });
 
+    //3.1 draw the mole
+    this.moleArray.forEach((mole) => {
+      mole.drawMole();
+    });
+
     //4. create the bullet
     this.bulletArray.forEach((newBullet) => {
       newBullet.drawBullet();
     });
     //4.1 remove the bullet from array as soon the bullet leaves the canvas
     this.removeBullets();
+
+    // 4.2 Collision
+    this.bulletArray.forEach((bullet) => {
+      this.moleArray.forEach((mole) => {
+        if (this.isColliding(bullet, mole)) {
+          console.log("diglett is hit");
+          this.score++;
+          scoreOfPlayer.innerText = `${this.score} points`;
+        }
+      });
+    });
   }
 
   // 5. button to shoot the bullet
@@ -111,5 +130,14 @@ class Game {
     this.bulletArray = this.bulletArray.filter(
       (newBullet) => newBullet.bulletTop && newBullet.bulletLeft <= CANVAS_WIDTH
     );
+  }
+
+  //7. Collision detection
+  isColliding(bullet, mole) {
+    const bottomOfMole = mole.moleWidth + mole.moleHeight;
+    const topOfBullet = bullet.bulletTop;
+    const result = bottomOfMole >= topOfBullet;
+
+    return result;
   }
 }

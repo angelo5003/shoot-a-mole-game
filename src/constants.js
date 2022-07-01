@@ -11,5 +11,9 @@ const ARROW_RIGHT = 39;
 const ARROW_LEFT = 37;
 const SPACE_BAR = 32;
 
+// Mole dimensions
+const MOLE_HEIGHT = 100;
+const MOLE_WIDTH = 130;
+
 // Score of Player
-const scoreOfPlayer = document.querySelector("title #score-span");
+const scoreOfPlayer = document.querySelector(".title #score-span");

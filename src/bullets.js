@@ -4,6 +4,7 @@ class Bullets {
     this.bulletTop = bulletTop;
     this.widthOfBullet = 30;
     this.heightOfBullet = 40;
+
     this.bulletImg = bulletImg;
   }
 
