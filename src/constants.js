@@ -16,4 +16,4 @@ const MOLE_HEIGHT = 100;
 const MOLE_WIDTH = 130;
 
 // Score of Player
-const scoreOfPlayer = document.querySelector(".title #score-span");
+const scoreOfPlayer = document.querySelector(".title #score-span #score");

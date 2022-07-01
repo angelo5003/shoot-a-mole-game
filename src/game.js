@@ -83,11 +83,6 @@ class Game {
       return !newMole.shouldDisappear;
     });
 
-    //3.1 draw the mole
-    this.moleArray.forEach((mole) => {
-      mole.drawMole();
-    });
-
     //4. create the bullet
     this.bulletArray.forEach((newBullet) => {
       newBullet.drawBullet();
@@ -136,7 +131,7 @@ class Game {
   isColliding(bullet, mole) {
     const bottomOfMole = mole.moleWidth + mole.moleHeight;
     const topOfBullet = bullet.bulletTop;
-    const result = bottomOfMole >= topOfBullet;
+    const result = bottomOfMole > topOfBullet;
 
     return result;
   }
