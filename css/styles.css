@@ -1,12 +1,12 @@
-@font-face {
+/* @font-face {
   font-family: titleFont;
-  src: url("/assets/fonts/Atari_Classic.ttf");
+  src: url("assets/fonts/Atari_Classic.ttf") format("ttf");
 }
 
 @font-face {
   font-family: bodyFont;
-  src: url("/assets//fonts/Atari_Classic_Smooth.ttf");
-}
+  src: url("assets/fonts/Atari_Classic_Smooth.ttf") format("ttf");
+} */
 
 .title {
   display: flex;
