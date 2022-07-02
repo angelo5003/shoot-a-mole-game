@@ -64,7 +64,6 @@ class Game {
   play() {
     this.gameBackground.drawBackground();
     this.backgroundHole.drawHole();
-
     this.player.drawPlayer();
 
     // 3. random method to show and hide the mole on the holes
@@ -77,6 +76,7 @@ class Game {
           this.moleImg
         )
       );
+      this.setGameTimer();
     }
     this.moleArray = this.moleArray.filter((newMole) => {
       newMole.drawMole();
@@ -134,5 +134,13 @@ class Game {
     const result = bottomOfMole > topOfBullet;
 
     return result;
+  }
+
+  //8. Timer for the game
+  setGameTimer() {
+    let totalTime = millis();
+    let timeLimit = 60;
+    let gameTime = int((totalTime - timeLimit) / 1000); // display game time in seconds
+    timer.innerText = gameTime;
   }
 }

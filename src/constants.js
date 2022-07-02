@@ -17,3 +17,5 @@ const MOLE_WIDTH = 130;
 
 // Score of Player
 const scoreOfPlayer = document.querySelector(".title #score-span #score");
+// Timer of the game
+const timer = document.querySelector(".title #time-span #span-timer");
