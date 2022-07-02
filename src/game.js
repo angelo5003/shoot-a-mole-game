@@ -76,7 +76,7 @@ class Game {
           this.moleImg
         )
       );
-      this.setGameTimer();
+      // this.setGameTimer();
     }
     this.moleArray = this.moleArray.filter((newMole) => {
       newMole.drawMole();
@@ -137,10 +137,12 @@ class Game {
   }
 
   //8. Timer for the game
-  setGameTimer() {
-    let totalTime = millis();
-    let timeLimit = 60;
-    let gameTime = int((totalTime - timeLimit) / 1000); // display game time in seconds
-    timer.innerText = gameTime;
-  }
+  // setGameTimer() {
+  //   let totalTime = millis(); // get the actual milliseconds
+  //   let splashTime = totalTime;
+  //   let gameTime;
+  //   let timeLimit = 60; // time limit of the game
+  //   // let gameTime = int((totalTime - timeLimit) / 1000); // display game time in seconds
+  //   timer.innerText = gameTime;
+  // }
 }
