@@ -1,11 +1,12 @@
 const splash = new SplashScreen();
 const game = new Game();
+const gameOver = new GameOver();
 
 // game timer
 let totalTime;
 let splashTime;
 let gameTime;
-let timeLimit = 60;
+let timeLimit = 30;
 
 // which function should be running now
 //? stage 0 = splashscreen / begin screen
@@ -34,12 +35,18 @@ function draw() {
     game.play();
     // stop splash time to save amount of time we are on splash
     splashTime = splashTime;
-    gameTime = int((totalTime - splashTime) / 1000); // display game time in seconds
+    gameTime = int((totalTime - splashTime) / 1000); // display game time in seconds by divinding the amount of millisecond through 1000
     timerOfGame.innerText = timeLimit - gameTime; // display countdown timer
   }
+
   if (mouseIsPressed === true) {
     stage = 1;
   }
+
+  if (gameTime >= timeLimit) {
+    stage = 2;
+    gameOver.drawGameOverScreen();
+  } // load the game over screen as soon as the timer is set to 0
 }
 
 function keyPressed() {
