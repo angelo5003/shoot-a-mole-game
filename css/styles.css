@@ -11,17 +11,6 @@
 .title {
   display: flex;
   justify-content: space-evenly;
-  font-family: titleFont;
-}
-
-#score-span,
-#score {
-  font-family: bodyFont;
-}
-
-#time-span,
-#span-timer {
-  font-family: bodyFont;
 }
 
 .game {
