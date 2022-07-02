@@ -1,6 +1,27 @@
+@font-face {
+  font-family: titleFont;
+  src: url("/assets/fonts/Atari_Classic.ttf");
+}
+
+@font-face {
+  font-family: bodyFont;
+  src: url("/assets//fonts/Atari_Classic_Smooth.ttf");
+}
+
 .title {
   display: flex;
   justify-content: space-evenly;
+  font-family: titleFont;
+}
+
+#score-span,
+#score {
+  font-family: bodyFont;
+}
+
+#time-span,
+#span-timer {
+  font-family: bodyFont;
 }
 
 .game {
@@ -17,6 +38,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family: bodyFont;
+  font-size: 15px;
 }
 
 .fa-solid,

@@ -1,6 +1,6 @@
 class GameOver {
   constructor() {
-    this.width = 350;
+    this.width = 250;
     this.height = 300;
   }
   drawGameOverScreen() {
@@ -11,8 +11,10 @@ class GameOver {
     noStroke();
     fill(0, 255, 0);
     textSize(40);
+    textFont(titleFont);
     text("Time is up", this.width / 2, 200);
     textSize(15);
-    text("Your time is up, refresh to play again", this.width / 2, 230);
+    textFont(bodyFont);
+    text("Your time is up, refresh to play again", this.width / 2, 300, 400);
   }
 }
