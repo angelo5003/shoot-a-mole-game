@@ -2,6 +2,10 @@ const splash = new SplashScreen();
 const game = new Game();
 const gameOver = new GameOver();
 
+// fonts
+let titleFont;
+let bodyFont;
+
 // game timer
 let totalTime;
 let splashTime;
@@ -14,6 +18,10 @@ let timeLimit = 30;
 let stage = 0; // splashscreen / begin screen
 
 function preload() {
+  // fonts for the game
+  titleFont = loadFont("assets/fonts/Atari_Classic.ttf");
+  bodyFont = loadFont("assets/fonts/Atari_Classic_Chunky.ttf");
+  // pre-load the game
   game.preload();
 }
 

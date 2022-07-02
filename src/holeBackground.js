@@ -6,7 +6,7 @@ class BackgroundHole {
     this.height = 300;
   }
   preload() {
-    this.backgroundHole = loadImage("assets/diglett_holes.png");
+    this.backgroundHole = loadImage("assets/images/diglett_holes.png");
   }
   drawHole() {
     imageMode(CENTER);

@@ -4,7 +4,7 @@ class Background {
     this.height = CANVAS_HEIGHT;
   }
   preload() {
-    this.background = loadImage("assets/forest_background_resized.jpeg");
+    this.background = loadImage("assets/images/forest_background_resized.jpeg");
   }
 
   drawBackground() {

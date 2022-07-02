@@ -56,8 +56,8 @@ class Game {
   preload() {
     this.gameBackground.preload();
     this.backgroundHole.preload();
-    this.bulletImg = loadImage("assets/bullet.png");
-    this.moleImg = loadImage("assets/diglett_without_background.png");
+    this.bulletImg = loadImage("assets/images/bullet.png");
+    this.moleImg = loadImage("assets/images/diglett_without_background.png");
     this.player.preload();
   }
   //2. everything that is related to play the game

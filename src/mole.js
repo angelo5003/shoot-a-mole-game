@@ -1,7 +1,7 @@
 class Mole {
   constructor(randomCoordinate, moleImg) {
-    this.moleWidth = MOLE_WIDTH;
-    this.moleHeight = MOLE_HEIGHT;
+    this.moleWidth = 130;
+    this.moleHeight = 100;
     this.moleImg = moleImg;
 
     this.x = randomCoordinate.x;
