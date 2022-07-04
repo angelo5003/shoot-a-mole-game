@@ -1,7 +1,7 @@
 class Bullets {
   constructor(bulletLeft, bulletTop, bulletImg) {
-    this.bulletLeft = bulletLeft;
-    this.bulletTop = bulletTop;
+    this.bulletLeft = bulletLeft; // x-axis of bullet
+    this.bulletTop = bulletTop; // y-axis of bullet
     this.widthOfBullet = 30;
     this.heightOfBullet = 40;
 

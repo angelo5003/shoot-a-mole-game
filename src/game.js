@@ -128,10 +128,27 @@ class Game {
 
   //7. Collision detection
   isColliding(bullet, mole) {
-    const bottomOfMole = mole.moleWidth + mole.moleHeight;
-    const topOfBullet = bullet.bulletTop;
-    const result = bottomOfMole > topOfBullet;
+    const bottomOfBullet = bullet.bulletTop + bullet.heightOfBullet;
+    const topOfMole = mole.y;
+    const bottomOfBulletGreaterThanTopOfMole = bottomOfBullet >= topOfMole;
 
-    return result;
+    const topOfBullet = bullet.bulletTop;
+    const bottomOfMole = mole.y + mole.moleHeight;
+    const isBottomOfBulletSmallerThanBottomOfMole = topOfBullet <= bottomOfMole;
+
+    const leftOfBullet = bullet.bulletLeft;
+    const rightOfMole = mole.x + mole.moleWidth;
+    const isLeftOfBulletSmallerThanRightOfMole = leftOfBullet <= rightOfMole;
+
+    const rightOfBullet = bullet.bulletLeft + bullet.widthOfBullet;
+    const leftOfMole = mole.x;
+    const isRightOfBulletBiggerThanLeftOfMole = rightOfBullet >= leftOfMole;
+
+    return (
+      bottomOfBulletGreaterThanTopOfMole &&
+      isBottomOfBulletSmallerThanBottomOfMole &&
+      isLeftOfBulletSmallerThanRightOfMole &&
+      isRightOfBulletBiggerThanLeftOfMole
+    );
   }
 }
