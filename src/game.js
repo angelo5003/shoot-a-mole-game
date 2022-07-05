@@ -60,6 +60,7 @@ class Game {
     this.moleImg = loadImage("assets/images/diglett_without_background.png");
     this.player.preload();
     diglettSound = loadSound("assets/sounds/diglett.mp3");
+    laserBeamSound = loadSound("assets/sounds/laserbeam.mp3");
   }
   //2. everything that is related to play the game
   play() {
@@ -117,7 +118,9 @@ class Game {
       new Bullets(
         this.player.moveHorizontal + 18,
         this.player.moveVertical - 85,
-        this.bulletImg
+        this.bulletImg,
+        laserBeamSound.play(),
+        laserBeamSound.setVolume(0.3)
       )
     );
   }
