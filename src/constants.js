@@ -19,3 +19,8 @@ const MOLE_WIDTH = 130;
 const scoreOfPlayer = document.querySelector(".title #score-span #score");
 // Timer of the game
 const timerOfGame = document.querySelector(".title #time-span #span-timer");
+
+// Sounds of game
+let introSound;
+let diglettSound;
+let outroSound;

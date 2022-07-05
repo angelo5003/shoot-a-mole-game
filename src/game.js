@@ -59,6 +59,7 @@ class Game {
     this.bulletImg = loadImage("assets/images/bullet.png");
     this.moleImg = loadImage("assets/images/diglett_without_background.png");
     this.player.preload();
+    diglettSound = loadSound("assets/sounds/diglett.mp3");
   }
   //2. everything that is related to play the game
   play() {
@@ -73,7 +74,9 @@ class Game {
           this.holeCoordinates[
             Math.floor(random(0, this.holeCoordinates.length - 1)) // 0 is the starting index of the array, the minus 1 is to keep repeating the random function
           ],
-          this.moleImg
+          this.moleImg,
+          diglettSound.play(),
+          diglettSound.setVolume(0.2)
         )
       );
     }

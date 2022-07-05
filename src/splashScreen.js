@@ -25,19 +25,15 @@ class SplashScreen {
 
     textSize(20);
     textFont(bodyFont);
-    text("How to play", this.width / 2, 210);
+    text(" How to play", this.width / 2, 210);
     textSize(10);
-    text("Hold left or right arrow key to move", this.width / 2, 250);
-    text("Press spacebar to fire bullets", this.width / 2, 288);
+    text(" Hold left or right arrow key to move", this.width / 2, 250);
+    text(" Press spacebar to fire bullets", this.width / 2, 288);
 
-    text(
-      "Hit as many digletts as you can in 60 seconds",
-      this.width / 2,
-      320,
-      320
-    );
+    text(" Hit as many digletts as you can", this.width / 2, 320);
+    text(" in 30 seconds", this.width / 2, 333);
 
-    text("Click the screen to begin", this.width / 2, 400);
+    text(" Click the screen to begin", this.width / 2, 380);
 
     pop();
   }
