@@ -27,8 +27,8 @@ function preload() {
 
   // pre-load sounds
   soundFormats("mp3");
-  // intro = loadSound("assets/sounds/intro-whack-a-mole.mp3");
   introSound = loadSound("assets/sounds/intro-whack-a-mole.mp3");
+  backgroundMusic = loadSound("assets/sounds/background-whack-a-mole.mp3");
   outroSound = loadSound("assets/sounds/outro-shoot-a-mole.mp3");
 }
 
@@ -54,9 +54,9 @@ function draw() {
     splashTime = splashTime;
     gameTime = int((totalTime - splashTime) / 1000); // display game time in seconds by dividing the amount of millisecond through 1000
     timerOfGame.innerText = timeLimit - gameTime; // display countdown timer
-    if (introSound.isPlaying() === false) {
-      introSound.play();
-      introSound.setVolume(0.6);
+    if (backgroundMusic.isPlaying() === false) {
+      backgroundMusic.play();
+      backgroundMusic.setVolume(0.6);
     }
   }
 
@@ -67,8 +67,8 @@ function draw() {
   if (gameTime >= timeLimit) {
     stage = 2;
     gameOver.drawGameOverScreen();
-    if (introSound.isPlaying() === true) {
-      introSound.stop();
+    if (backgroundMusic.isPlaying() === true) {
+      backgroundMusic.stop();
       outroSound.play();
       outroSound.setVolume(0.5);
     }

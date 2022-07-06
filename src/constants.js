@@ -22,6 +22,7 @@ const timerOfGame = document.querySelector(".title #time-span #span-timer");
 
 // Sounds of game
 let introSound;
+let backgroundMusic;
 let laserBeamSound;
 let diglettSound;
 let outroSound;
