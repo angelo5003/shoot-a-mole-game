@@ -10,9 +10,9 @@ let bodyFont;
 let totalTime;
 let splashTime;
 let gameTime;
-let timeLimit = 20;
+let timeLimit = 12;
 
-// which function should be running now
+// which file should be running
 //? stage 0 = splashscreen / begin screen
 //? stage 1 = game
 let stage = 0; // splashscreen / begin screen
@@ -52,7 +52,7 @@ function draw() {
 
     // stop splash time to save amount of time we are on splash
     splashTime = splashTime;
-    gameTime = int((totalTime - splashTime) / 1000); // display game time in seconds by dividing the amount of millisecond through 1000
+    gameTime = int((totalTime - splashTime) / 1000); // display game time in seconds by dividing the amount of milliseconds through 1000
     timerOfGame.innerText = timeLimit - gameTime; // display countdown timer
     if (backgroundMusic.isPlaying() === false) {
       backgroundMusic.play();

@@ -50,13 +50,13 @@ class Game {
     this.moleArray = [];
     this.bulletArray = [];
     this.score = 0;
+    this.highScore = 0;
   }
 
   //1. preload images etc
   preload() {
     this.gameBackground.preload();
     this.backgroundHole.preload();
-    // this.bulletImg = loadImage("assets/images/bullet.png");
     this.bulletImg = loadImage("assets/images/laser-bullet.png");
     this.moleImg = loadImage("assets/images/diglett_without_background.png");
     this.player.preload();
@@ -98,7 +98,6 @@ class Game {
     this.bulletArray.forEach((bullet) => {
       this.moleArray.forEach((mole) => {
         if (this.isColliding(bullet, mole)) {
-          // console.log("diglett is hit");
           this.score++;
           scoreOfPlayer.innerText = `${this.score} points`;
         }
@@ -109,7 +108,6 @@ class Game {
   // 5. button to shoot the bullet
   keyPressed() {
     if (keyCode === SPACE_BAR) {
-      // console.log("Im shooting");
       this.shootBullet();
     }
   }

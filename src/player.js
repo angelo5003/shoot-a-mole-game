@@ -10,8 +10,7 @@ class Player {
 
   //1. image of player
   preload() {
-    // this.img = loadImage("assets/images/alien-player.png");
-    this.img = loadImage("assets/images/alien-player-2.png");
+    this.img = loadImage("assets/images/alien-player.png");
   }
 
   //2.draw player
