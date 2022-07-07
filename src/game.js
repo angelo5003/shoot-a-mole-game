@@ -56,7 +56,8 @@ class Game {
   preload() {
     this.gameBackground.preload();
     this.backgroundHole.preload();
-    this.bulletImg = loadImage("assets/images/bullet.png");
+    // this.bulletImg = loadImage("assets/images/bullet.png");
+    this.bulletImg = loadImage("assets/images/laser-bullet.png");
     this.moleImg = loadImage("assets/images/diglett_without_background.png");
     this.player.preload();
     diglettSound = loadSound("assets/sounds/diglett.mp3");
@@ -97,7 +98,7 @@ class Game {
     this.bulletArray.forEach((bullet) => {
       this.moleArray.forEach((mole) => {
         if (this.isColliding(bullet, mole)) {
-          console.log("diglett is hit");
+          // console.log("diglett is hit");
           this.score++;
           scoreOfPlayer.innerText = `${this.score} points`;
         }
@@ -108,7 +109,7 @@ class Game {
   // 5. button to shoot the bullet
   keyPressed() {
     if (keyCode === SPACE_BAR) {
-      console.log("Im shooting");
+      // console.log("Im shooting");
       this.shootBullet();
     }
   }
@@ -116,8 +117,8 @@ class Game {
   shootBullet() {
     this.bulletArray.push(
       new Bullets(
-        this.player.moveHorizontal + 18,
-        this.player.moveVertical - 85,
+        this.player.moveHorizontal + 40,
+        this.player.moveVertical - 90,
         this.bulletImg,
         laserBeamSound.play(),
         laserBeamSound.setVolume(0.3)

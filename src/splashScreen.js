@@ -31,7 +31,7 @@ class SplashScreen {
     text(" Press spacebar to fire bullets", this.width / 2, 288);
 
     text(" Hit as many digletts as you can", this.width / 2, 320);
-    text(" in 30 seconds", this.width / 2, 333);
+    text(" in 20 seconds", this.width / 2, 333);
 
     text(" Click the screen to begin", this.width / 2, 380);
 

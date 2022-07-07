@@ -3,11 +3,6 @@
   src: url("assets/fonts/Atari_Classic.ttf") format("ttf");
 }
 
-@font-face {
-  font-family: "Atari Smooth";
-  src: url("assets/fonts/Atari_Classic_Smooth.ttf") format("ttf");
-}
-
 .title {
   display: flex;
   justify-content: space-evenly;
@@ -28,8 +23,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  font-family: Atari_Classic_Smooth;
-  font-size: 15px;
+  font-size: 12px;
+  font-family: Atari_Classic;
 }
 
 .fa-solid,

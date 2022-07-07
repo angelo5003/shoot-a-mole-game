@@ -10,7 +10,7 @@ let bodyFont;
 let totalTime;
 let splashTime;
 let gameTime;
-let timeLimit = 10;
+let timeLimit = 20;
 
 // which function should be running now
 //? stage 0 = splashscreen / begin screen

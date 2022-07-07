@@ -10,7 +10,8 @@ class Player {
 
   //1. image of player
   preload() {
-    this.img = loadImage("assets/images/angry_gnome_transparent.png");
+    // this.img = loadImage("assets/images/alien-player.png");
+    this.img = loadImage("assets/images/alien-player-2.png");
   }
 
   //2.draw player
